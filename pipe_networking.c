@@ -77,10 +77,10 @@ int client_handshake(int *to_server)
 	printf("[client] connecting to the server's pipe O.o\n");
 	int down = open(SERVER_PIPE, O_WRONLY);
 	printf("[client] eureka! i done did it! gonna pass them my private name brb\n");
-
+	
 	write(down, CLIENT_PIPE, strlen(CLIENT_PIPE));
 	printf("[client] sent it :3\n");
-	remove(CLIENT_PIPE);
+	remove(CLIENT_PIPE);	
 
 	to_server = open(CLIENT_PIPE, O_RDONLY);
 	char msg[HANDSHAKE_BUFFER_SIZE];
